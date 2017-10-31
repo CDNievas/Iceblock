@@ -16,7 +16,7 @@ public class Main {
 		ConnectionManager.changeConnection("hsqldb");
 		Connection conn = ConnectionManager.getConnection();
 		
-		
+		/*
 		Person p = IBlock.find(conn, Person.class, 2);
 		System.out.println("Nombre:" + p.getName());
 		List<Occupation> occup = p.getOccupations();
@@ -33,8 +33,13 @@ public class Main {
 		for(Person pa : pers) {
 			System.out.println(pa.getName());
 		}
+		*/
 		
-		IBlock.insert(conn,Person.class,p,2);
+		Person p = IBlock.find(conn, Person.class, 7);
+		System.out.println(IBlock.insert(conn,Person.class,p));		
+		IBlock.insert(conn,Person.class,p);
+		
+		System.out.println(IBlock.delete(conn, Person.class, "person.id_person = 16 or person.id_person=17"));
 		
 	}
 	

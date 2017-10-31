@@ -26,8 +26,7 @@ public class Test {
 		
 	}
 	
-	// Test OneToOne
-	
+	// Test SELECT OneToOne
 	@org.junit.Test
 	public void query_without_XQL_in_EAGER() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
 		
@@ -112,6 +111,33 @@ public class Test {
 
 		Assert.assertNull(list.get(0).getTypeOccupation());
 		
-	}	
+	}
+	
+	// Test DELETE
+	/*public void delete() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+	
+		Connection conn = this.getConnection();
+		
+		String xql = "occupation.id_type_occupation = 1";
+		List<Occupation> list = IBlock.select(conn, Occupation.class, xql);
+		
+		Assert.assertEquals(list.size(), 3);
+		
+		for(Occupation x : list) {
+			Assert.assertNotNull(x.getTypeOccupation());
+		}
+		
+		xql = "occupation.id_occupation = 6";
+		list = IBlock.select(conn, Occupation.class, xql);
+	
+		Assert.assertNull(list.get(0).getTypeOccupation());
+		
+		xql = "occupation.id_occupation = 7";
+		list = IBlock.select(conn, Occupation.class, xql);
+	
+		Assert.assertNull(list.get(0).getTypeOccupation());
+	
+	}*/
+	
 	
 }

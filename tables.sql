@@ -40,7 +40,6 @@ INSERT INTO Person VALUES (6,'Tom',43,62.8,4,null);
 INSERT INTO Person VALUES (7,'Asd',25,87.3,null,null);
 INSERT INTO Person VALUES (8,'KK',10,0.9,null,null);
 INSERT INTO Person VALUES (9,'Ernest',23,879.5,5,5);
-INSERT INTO Person VALUES (7,'Carl',25,90.0,null,4);
 
 INSERT INTO Person_X_Occupation VALUES (0,0,0);
 INSERT INTO Person_X_Occupation VALUES (1,0,1);

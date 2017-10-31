@@ -1,5 +1,7 @@
 package iceblock;
 
+import java.lang.reflect.InvocationTargetException;
+
 import iceblock.auxiliar.*;
 
 public class QueryBuilder {
@@ -73,7 +75,7 @@ public class QueryBuilder {
 				
 	}
 	
-	public static <T> String insert(Class<T> aClass, T object, Integer id){
+	public static <T> String insert(Class<T> aClass, T object) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
 		
 		INSBuilder insBuilder = new INSBuilder();
 
@@ -87,10 +89,7 @@ public class QueryBuilder {
 		query = query + insBuilder.columns(aClass);
 		
 		//VALUES
-		//query = query + insBuilder.values();
-		
-		//Object Values
-		//query = query + insBuilder.objValues(aClass,object);
+		query = query + insBuilder.values(aClass,object);
 		
 		return query;
 	
@@ -98,18 +97,18 @@ public class QueryBuilder {
 	
 	public static <T> String delete(Class<T> aClass, String xql) {
 		
-		//DELBuilder delBuilder = new delBuilder();
+		DELBuilder delBuilder = new DELBuilder();
 		
 		//DELETE
-		//String query = delBuilder.delete();
+		String query = delBuilder.delete(aClass);
 		
 		//Table
-		//query = query + delBuilder.table();
+		query = query + delBuilder.table();
 		
 		//WHERE
-		//query = query + delBuilder.where(xql);
+		query = query + delBuilder.where(xql);
 		
-		return null;
+		return query;
 		
 	}
 	
