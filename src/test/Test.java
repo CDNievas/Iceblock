@@ -139,5 +139,65 @@ public class Test {
 	
 	}*/
 	
+	// TEST INSERT
+	public void insert_singe_object_withId_thatExists() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+		
+		Connection conn = this.getConnection();
+		Person p = new Person(1,"example",0,0.0,null);
+		int id = IBlock.insert(conn, Person.class, p);
+		
+		Assert.assertEquals(id,1);
+		
+	}
+	
+	@org.junit.Test()
+	public void insert_singe_object_withId_thatNotExists() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+		
+		Connection conn = this.getConnection();
+		Person p = new Person(55,"example",0,0.0,null);
+				
+		Integer id = IBlock.insert(conn, Person.class, p);
+
+		Assert.assertNotNull(id);
+	
+	}
+	/*
+	@org.junit.Test()
+	public void insert_singe_object_withoutId() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+		
+		Connection conn = this.getConnection();
+		Person p = new Person(55,"example",0,0.0,null);
+		Integer id = IBlock.insert(conn, Person.class, p);
+
+		Assert.assertNotNull(id);
+	
+	}
+	
+	@org.junit.Test()
+	public void insert_composite_object_withId_thatExists() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+		
+		Connection conn = this.getConnection();
+		Address a = new Address(1,"ejemplo",0);
+		Person p = new Person(11,"example",0,0.0,a);
+		Integer id = IBlock.insert(conn, Person.class, p);
+
+		Assert.assertNotNull(id);
+	
+	}
+	*/
+	/*
+	@org.junit.Test()
+	public void insert_singe_object_withoutId() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+		
+		Connection conn = this.getConnection();
+		Person p = new Person(55,"example",0,0.0,null);
+		Integer id = IBlock.insert(conn, Person.class, p);
+
+		Assert.assertNotNull(id);
+	
+	}*/
+
+	
+	
 	
 }

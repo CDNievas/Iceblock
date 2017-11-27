@@ -62,7 +62,7 @@ public class IBlock {
 	}
 	
 	// Devuelve ID de objeto insertado
-	public static <T> Integer insert(Connection conn, Class<T> aClass, T object) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, SQLException {
+	public static <T> Integer insert(Connection conn, Class<T> aClass, T object) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, SQLException, InstantiationException {
 		
 		String query = QueryBuilder.insert(aClass,object);
 		

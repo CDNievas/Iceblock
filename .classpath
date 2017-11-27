@@ -16,6 +16,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Administrador/Desktop/hsqldb-2.4.0/hsqldb/lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="/home/christian/Escritorio/hsqldb-2.4.0/hsqldb/lib/hsqldb.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

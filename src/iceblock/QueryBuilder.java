@@ -1,6 +1,7 @@
 package iceblock;
 
 import java.lang.reflect.InvocationTargetException;
+import java.sql.SQLException;
 
 import iceblock.auxiliar.*;
 
@@ -75,7 +76,7 @@ public class QueryBuilder {
 				
 	}
 	
-	public static <T> String insert(Class<T> aClass, T object) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+	public static <T> String insert(Class<T> aClass, T object) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, SQLException, InstantiationException{
 		
 		INSBuilder insBuilder = new INSBuilder();
 

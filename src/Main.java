@@ -35,11 +35,25 @@ public class Main {
 		}
 		*/
 		
-		Person p = IBlock.find(conn, Person.class, 7);
-		System.out.println(IBlock.insert(conn,Person.class,p));		
-		IBlock.insert(conn,Person.class,p);
+		Address asd = new Address();
+		asd.setIdAddress(3);
+		asd.setStreet("ejemplo");
+		asd.setNumber(0);
+		Person p = new Person();
 		
-		System.out.println(IBlock.delete(conn, Person.class, "person.id_person = 16 or person.id_person=17"));
+		p.setName("xd");
+		p.setIdPerson(28);
+		p.setAge(5);
+		p.setAddress(asd);
+		p.setWeigth(50.5);
+		
+		IBlock.insert(conn, Person.class, p);
+		
+		/*Person p = IBlock.find(conn, Person.class, 7);
+		System.out.println(IBlock.insert(conn,Person.class,p));		
+		IBlock.insert(conn,Person.class,p);*/
+		
+		//System.out.println(IBlock.delete(conn, Person.class, "person.id_person = 18 or person.id_person=19"));
 		
 	}
 	

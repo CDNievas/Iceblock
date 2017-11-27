@@ -16,7 +16,7 @@ public class OBJBuilder {
 	int usedFields = 0;
 	
 	public <T> T build(Class<T> aClass, ResultSet result) throws InstantiationException, IllegalAccessException, SQLException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException{
-
+				
 		// Create object
 		T obj = aClass.newInstance();
 		T object = (T)Enhancer.create(aClass,getMethodInterceptor(obj));
